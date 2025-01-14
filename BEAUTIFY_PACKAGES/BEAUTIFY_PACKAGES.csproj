@@ -9,7 +9,6 @@
 
     <ItemGroup>
       <Folder Include="BEAUTIFY_PACKAGES.CONTRACT\Services\Clinics\" />
-      <Folder Include="BEAUTIFY_PACKAGES.DOMAIN\Entities\" />
       <Folder Include="BEAUTIFY_PACKAGES.PRESENTATION\" />
     </ItemGroup>
 
