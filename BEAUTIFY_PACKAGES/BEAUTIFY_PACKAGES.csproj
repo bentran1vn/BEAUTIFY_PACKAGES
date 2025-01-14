@@ -2,9 +2,24 @@
 
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
+        <RootNamespace>BEAUTIFY_PACKAGES</RootNamespace>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <PackageId>BEAUTIFY_PACKAGES</PackageId>
+        <Version>1.0.0</Version>
+        <Authors>bentran1vn</Authors>
+        <Company>BEAUTIFY</Company>
+        <Description>A Share library for BEAUTIFY System !</Description>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/bentran1vn/BEAUTIFY_PACKAGES</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/bentran1vn/BEAUTIFY_PACKAGES</RepositoryUrl>
+        <PackageTags>beautify_packages-system contract shared-library utilities integration</PackageTags>
+        <PackageReadmeFile>../README.md</PackageReadmeFile>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
     </PropertyGroup>
 
     <ItemGroup>

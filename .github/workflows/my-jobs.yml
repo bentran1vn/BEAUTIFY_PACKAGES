@@ -1,0 +1,37 @@
+name: Docker Build and Publish NuGet Package
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-publish:
+    runs-on: [ self-hosted ]
+    
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build Docker Image
+        run: docker build -t beautify_packages:latest -f BEAUTIFY_PACKAGES/Dockerfile .
+
+      - name: Copy NuGet package from Docker container
+        run: |
+          docker create --name temp beautify_packages:latest
+          docker cp temp:/app/nupkg ./nupkg
+          docker rm temp
+
+      - name: Push to NuGet
+        env:
+          DOTNET_CLI_HOME: /tmp  # Set it to a writable location
+        run: |
+          dotnet nuget push ./nupkg/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{secrets.NUGET_API_KEY}} --skip-duplicate
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: nuget-package
+          path: ./nupkg/*.nupkg
+
+      - name: Cleanup Docker
+        run: docker system prune -f
