@@ -9,7 +9,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <PackageId>BEAUTIFY_PACKAGES</PackageId>
+        <PackageId>BEAUTIFY_PACKAGES.SHARE</PackageId>
         <Version>1.0.0</Version>
         <Authors>bentran1vn</Authors>
         <Company>BEAUTIFY</Company>
@@ -18,9 +18,19 @@
         <PackageProjectUrl>https://github.com/bentran1vn/BEAUTIFY_PACKAGES</PackageProjectUrl>
         <RepositoryUrl>https://github.com/bentran1vn/BEAUTIFY_PACKAGES</RepositoryUrl>
         <PackageTags>beautify_packages-system contract shared-library utilities integration</PackageTags>
-        <PackageReadmeFile>../README.md</PackageReadmeFile>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
     </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="README.md">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
+    </ItemGroup>
+<!--    <ItemGroup>-->
+<!--        <None Include=".dockerignore" Pack="true" />-->
+<!--    </ItemGroup>-->
 
     <ItemGroup>
       <Folder Include="BEAUTIFY_PACKAGES.CONTRACT\Services\Clinics\" />
@@ -34,12 +44,6 @@
       <PackageReference Include="MediatR" Version="12.4.1" />
       <PackageReference Include="MongoDB.Bson" Version="3.1.0" />
       <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Content Include="..\.dockerignore">
-        <Link>.dockerignore</Link>
-      </Content>
     </ItemGroup>
 
 </Project>

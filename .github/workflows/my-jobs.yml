@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Build Docker Image
-        run: docker build -t beautify_packages:latest -f BEAUTIFY_PACKAGES/Dockerfile .
+        run: docker build -t beautify_packages:latest -f BEAUTIFY_PACKAGES.SHARE/Dockerfile .
 
       - name: Copy NuGet package from Docker container
         run: |
