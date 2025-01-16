@@ -33,8 +33,9 @@
 <!--    </ItemGroup>-->
 
     <ItemGroup>
-      <Folder Include="BEAUTIFY_PACKAGES.APPLICATION\" />
+      <Folder Include="BEAUTIFY_PACKAGES.APPLICATION\DependencyInjection\" />
       <Folder Include="BEAUTIFY_PACKAGES.CONTRACT\Services\Clinics\" />
+      <Folder Include="BEAUTIFY_PACKAGES.INFRASTRUCTURE\" />
       <Folder Include="BEAUTIFY_PACKAGES.PRESENTATION\" />
     </ItemGroup>
 
