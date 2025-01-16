@@ -1,6 +1,6 @@
 # BEAUTIFY_PACKAGES
 
-[![NuGet](https://img.shields.io/nuget/v/https://www.nuget.org/packages/BEAUTIFY_PACKAGES.SHARE)](https://www.nuget.org/packages/BEAUTIFY_PACKAGES.SHARE)  
+[![NuGet](https://img.shields.io/nuget/v/BEAUTIFY_PACKAGES.SHARE)](https://www.nuget.org/packages/BEAUTIFY_PACKAGES.SHARE)  
 **A shared library for the BEAUTIFY System, designed to provide utilities, integration contracts, and reusable components.**
 
 ---
