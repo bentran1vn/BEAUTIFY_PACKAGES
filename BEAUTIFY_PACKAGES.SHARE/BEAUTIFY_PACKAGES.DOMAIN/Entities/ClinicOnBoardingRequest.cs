@@ -2,7 +2,7 @@
 using BEAUTIFY_PACKAGES.BEAUTIFY_PACKAGES.DOMAIN.Abstractions.Entities;
 
 namespace BEAUTIFY_PACKAGES.BEAUTIFY_PACKAGES.DOMAIN.Entities;
-public class ClinicOnBoardingRequest : AggregateRoot<int>, IAuditableEntity
+public class ClinicOnBoardingRequest : AggregateRoot<Guid>, IAuditableEntity
 {
     public required string Name { get; set; }
     public required string Email { get; set; }

@@ -4,7 +4,7 @@ namespace BEAUTIFY_PACKAGES.BEAUTIFY_PACKAGES.DOMAIN.Abstractions.Entities;
 public abstract class Entity<T> : IEntity<T>
 {
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int Id { get; set; }
+    public T Id { get; set; }
 
     public bool IsDeleted { get; protected set; }
 }

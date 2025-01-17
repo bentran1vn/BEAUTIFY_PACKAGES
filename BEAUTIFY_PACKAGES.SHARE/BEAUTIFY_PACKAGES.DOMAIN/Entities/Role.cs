@@ -2,7 +2,7 @@
 using BEAUTIFY_PACKAGES.BEAUTIFY_PACKAGES.DOMAIN.Abstractions.Entities;
 
 namespace BEAUTIFY_PACKAGES.BEAUTIFY_PACKAGES.DOMAIN.Entities;
-public class Role : AggregateRoot<int>, IAuditableEntity
+public class Role : AggregateRoot<Guid>, IAuditableEntity
 {
     public required string Name { get; set; }
     public DateTimeOffset CreatedOnUtc { get; set; }

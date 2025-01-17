@@ -3,7 +3,7 @@ using BEAUTIFY_PACKAGES.BEAUTIFY_PACKAGES.DOMAIN.Abstractions.Aggregates;
 using BEAUTIFY_PACKAGES.BEAUTIFY_PACKAGES.DOMAIN.Abstractions.Entities;
 
 namespace BEAUTIFY_PACKAGES.BEAUTIFY_PACKAGES.DOMAIN.Entities;
-public class SystemTransaction : AggregateRoot<int>, IAuditableEntity
+public class SystemTransaction : AggregateRoot<Guid>, IAuditableEntity
 {
     public int ClinicId { get; set; }
     public virtual Clinic? Clinic { get; set; }

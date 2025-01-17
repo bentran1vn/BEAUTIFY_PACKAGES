@@ -3,7 +3,7 @@ using BEAUTIFY_PACKAGES.BEAUTIFY_PACKAGES.DOMAIN.Abstractions.Aggregates;
 using BEAUTIFY_PACKAGES.BEAUTIFY_PACKAGES.DOMAIN.Abstractions.Entities;
 
 namespace BEAUTIFY_PACKAGES.BEAUTIFY_PACKAGES.DOMAIN.Entities;
-public class SubscriptionPackage : AggregateRoot<int>, IAuditableEntity
+public class SubscriptionPackage : AggregateRoot<Guid>, IAuditableEntity
 {
     public required string Name { get; set; }
     public required string Description { get; set; }

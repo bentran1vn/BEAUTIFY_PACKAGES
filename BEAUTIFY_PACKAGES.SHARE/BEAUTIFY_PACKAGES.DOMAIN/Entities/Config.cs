@@ -2,7 +2,7 @@
 using BEAUTIFY_PACKAGES.BEAUTIFY_PACKAGES.DOMAIN.Abstractions.Entities;
 
 namespace BEAUTIFY_PACKAGES.BEAUTIFY_PACKAGES.DOMAIN.Entities;
-public class Config : AggregateRoot<int>, IAuditableEntity
+public class Config : AggregateRoot<Guid>, IAuditableEntity
 {
     public required string Key { get; set; }
     public required string Value { get; set; }
