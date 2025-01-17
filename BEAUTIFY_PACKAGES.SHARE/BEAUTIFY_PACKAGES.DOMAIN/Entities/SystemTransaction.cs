@@ -5,9 +5,9 @@ using BEAUTIFY_PACKAGES.BEAUTIFY_PACKAGES.DOMAIN.Abstractions.Entities;
 namespace BEAUTIFY_PACKAGES.BEAUTIFY_PACKAGES.DOMAIN.Entities;
 public class SystemTransaction : AggregateRoot<Guid>, IAuditableEntity
 {
-    public int ClinicId { get; set; }
+    public Guid ClinicId { get; set; }
     public virtual Clinic? Clinic { get; set; }
-    public int SubscriptionPackageId { get; set; }
+    public Guid SubscriptionPackageId { get; set; }
     public virtual SubscriptionPackage? SubscriptionPackage { get; set; }
     public DateTimeOffset TransactionDate { get; set; }
     [Column(TypeName = "decimal(18,2)")] public decimal Amount { get; set; }

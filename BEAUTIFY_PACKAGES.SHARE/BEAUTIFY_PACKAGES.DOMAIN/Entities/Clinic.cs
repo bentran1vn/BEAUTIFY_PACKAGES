@@ -18,7 +18,7 @@ public class Clinic : AggregateRoot<Guid>, IAuditableEntity
     public string? Description { get; set; }
     public bool IsActivated { get; set; } = false;
     public bool IsMain { get; set; } = false;
-    public int? MainClinicId { get; set; }
+    public Guid? MainClinicId { get; set; }
     public virtual Clinic? MainClinic { get; set; }
 
     public int ClinicOnBoardingRequestId { get; set; }
