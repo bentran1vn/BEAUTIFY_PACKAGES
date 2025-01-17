@@ -26,6 +26,13 @@
 <!--    </ItemGroup>-->
 
     <ItemGroup>
+        <None Include="README.md">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
+    </ItemGroup>
+
+    <ItemGroup>
       <Folder Include="BEAUTIFY_PACKAGES.APPLICATION\DependencyInjection\" />
       <Folder Include="BEAUTIFY_PACKAGES.INFRASTRUCTURE\" />
       <Folder Include="BEAUTIFY_PACKAGES.PERSISTENCE\DependencyInjection\" />
