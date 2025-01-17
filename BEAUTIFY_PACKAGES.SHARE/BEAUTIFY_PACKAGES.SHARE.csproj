@@ -10,7 +10,7 @@
 
     <PropertyGroup>
         <PackageId>BEAUTIFY_PACKAGES.SHARE</PackageId>
-        <Version>1.0.7</Version>
+        <Version>1.0.8</Version>
         <Authors>bentran1vn</Authors>
         <Company>BEAUTIFY</Company>
         <Description>A Share library for BEAUTIFY System !</Description>
@@ -34,6 +34,7 @@
 
     <ItemGroup>
       <Folder Include="BEAUTIFY_PACKAGES.APPLICATION\DependencyInjection\" />
+      <Folder Include="BEAUTIFY_PACKAGES.INFRASTRUCTURE\DependencyInjection\" />
       <Folder Include="BEAUTIFY_PACKAGES.PERSISTENCE\DependencyInjection\" />
       <Folder Include="BEAUTIFY_PACKAGES.PRESENTATION\" />
     </ItemGroup>
