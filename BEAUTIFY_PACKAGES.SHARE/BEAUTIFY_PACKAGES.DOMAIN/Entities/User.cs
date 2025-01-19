@@ -11,7 +11,7 @@ public class User : AggregateRoot<Guid>, IAuditableEntity
     public required string Password { get; set; }
     public required string FirstName { get; set; }
     public required string LastName { get; set; }
-    public int? RoleId { get; set; }
+    public Guid? RoleId { get; set; }
     public virtual Role? Role { get; set; }
 
     [Length(10, 10, ErrorMessage = "Phone Number must be 10 digits")]
