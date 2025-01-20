@@ -46,9 +46,15 @@
       <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.10.0" />
       <PackageReference Include="MassTransit" Version="8.2.5" />
       <PackageReference Include="MediatR" Version="12.4.1" />
+      <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.7" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.1" />
       <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.3.0" />
       <PackageReference Include="MongoDB.Bson" Version="3.1.0" />
       <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+      <PackageReference Include="Serilog.AspNetCore" Version="9.0.0" />
+      <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+      <PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" Version="7.2.0" />
+      <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="7.2.0" />
       <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.3.0" />
     </ItemGroup>
 
