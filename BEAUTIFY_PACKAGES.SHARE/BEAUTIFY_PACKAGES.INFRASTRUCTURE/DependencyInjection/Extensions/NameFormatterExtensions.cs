@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using MassTransit;
 
-namespace BEAUTIFY_PACKAGES.BEAUTIFY_PACKAGES.INFRASTRUCTURE.DependencyInjection.DependencyInjection;
+namespace BEAUTIFY_PACKAGES.BEAUTIFY_PACKAGES.INFRASTRUCTURE.DependencyInjection.Extensions;
 
 internal static class NameFormatterExtensions
 {
