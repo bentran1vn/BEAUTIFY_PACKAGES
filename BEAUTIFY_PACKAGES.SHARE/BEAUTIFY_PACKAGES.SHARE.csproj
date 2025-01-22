@@ -10,7 +10,7 @@
 
     <PropertyGroup>
         <PackageId>BEAUTIFY_PACKAGES.SHARE</PackageId>
-        <Version>1.0.17</Version>
+        <Version>1.0.18</Version>
         <Authors>bentran1vn</Authors>
         <Company>BEAUTIFY</Company>
         <Description>A Share library for BEAUTIFY System !</Description>
@@ -31,7 +31,7 @@
 
     <ItemGroup>
       <Folder Include="BEAUTIFY_PACKAGES.APPLICATION\DependencyInjection\" />
-      <Folder Include="BEAUTIFY_PACKAGES.PERSISTENCE\DependencyInjection\" />
+      <Folder Include="BEAUTIFY_PACKAGES.PERSISTENCE\DependencyInjection\Extensions\" />
       <Folder Include="BEAUTIFY_PACKAGES.PRESENTATION\" />
     </ItemGroup>
 
@@ -49,6 +49,7 @@
       <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="8.0.7" />
       <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.7" />
       <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.7" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.7" />
       <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="8.0.10" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.1" />
       <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.3.0" />
