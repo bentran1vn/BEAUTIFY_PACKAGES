@@ -10,7 +10,7 @@
 
     <PropertyGroup>
         <PackageId>BEAUTIFY_PACKAGES.SHARE</PackageId>
-        <Version>1.0.23</Version>
+        <Version>1.0.24</Version>
         <Authors>bentran1vn</Authors>
         <Company>BEAUTIFY</Company>
         <Description>A Share library for BEAUTIFY System !</Description>

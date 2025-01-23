@@ -1,34 +1,34 @@
-﻿# Stage 1: Build and Package
+﻿# Use the official .NET SDK image
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-env
+
+# Set the working directory
 WORKDIR /app
 
-# Copy only necessary files for restore
+# Copy the solution file and project files
+COPY .dockerignore .
 COPY README.md BEAUTIFY_PACKAGES.SHARE/
 COPY BEAUTIFY_PACKAGES.sln .
-COPY BEAUTIFY_PACKAGES.SHARE/BEAUTIFY_PACKAGES.SHARE.csproj BEAUTIFY_PACKAGES.SHARE/
+COPY BEAUTIFY_PACKAGES.SHARE/BEAUTIFY_PACKAGES.SHARE.csproj ./BEAUTIFY_PACKAGES.SHARE/
+
+# Restore dependencies
 RUN dotnet restore
 
 # Copy the rest of the project files
-COPY BEAUTIFY_PACKAGES.SHARE/ BEAUTIFY_PACKAGES.SHARE/
+COPY BEAUTIFY_PACKAGES.SHARE/ ./BEAUTIFY_PACKAGES.SHARE/
 
-# Build and publish in a single step (avoids redundant build steps)
-RUN dotnet publish BEAUTIFY_PACKAGES.SHARE/BEAUTIFY_PACKAGES.SHARE.csproj \
-    --configuration Release \
-    --no-restore \
-    --output /app/out
+# Build the project
+RUN dotnet build BEAUTIFY_PACKAGES.SHARE/BEAUTIFY_PACKAGES.SHARE.csproj --configuration Release --no-restore
 
-# Pack the NuGet package
-RUN dotnet pack BEAUTIFY_PACKAGES.SHARE/BEAUTIFY_PACKAGES.SHARE.csproj \
-    --configuration Release \
-    --output /app/nupkg \
-    --no-restore
+# Publish the project
+RUN dotnet publish BEAUTIFY_PACKAGES.SHARE/BEAUTIFY_PACKAGES.SHARE.csproj -c Release -o out
 
-# Stage 2: Runtime Image (Minimal Final Image)
+# Pack the NuGet package (with no default excludes and no README required)
+RUN dotnet pack BEAUTIFY_PACKAGES.SHARE/BEAUTIFY_PACKAGES.SHARE.csproj -c Release -o nupkg --no-restore
+
+# Final stage/image
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
-
-# Copy only the built application and NuGet package from the build stage
-COPY --from=build-env /app/out . 
+COPY --from=build-env /app/out .
 COPY --from=build-env /app/nupkg ./nupkg
 
 # Set the entry point to run the application
