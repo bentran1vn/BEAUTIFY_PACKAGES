@@ -3,6 +3,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-env
 WORKDIR /app
 
 # Copy only necessary files for restore
+COPY README.md BEAUTIFY_PACKAGES.SHARE/
 COPY BEAUTIFY_PACKAGES.sln .
 COPY BEAUTIFY_PACKAGES.SHARE/BEAUTIFY_PACKAGES.SHARE.csproj BEAUTIFY_PACKAGES.SHARE/
 RUN dotnet restore
