@@ -18,8 +18,10 @@ public class ValidationPipelineBehavior<TRequest, TResponse> : IPipelineBehavior
         RequestHandlerDelegate<TResponse> next,
         CancellationToken cancellationToken)
     {
+        Console.WriteLine("ValidationPipelineBehavior is executing.");
         if (!_validators.Any())
         {
+            Console.WriteLine("No validators found for the request.");
             return await next();
         }
 
@@ -35,6 +37,7 @@ public class ValidationPipelineBehavior<TRequest, TResponse> : IPipelineBehavior
 
         if (errors.Any())
         {
+            Console.WriteLine("Validation errors found.");
             return CreateValidationResult<TResponse>(errors);
         }
 
@@ -49,11 +52,11 @@ public class ValidationPipelineBehavior<TRequest, TResponse> : IPipelineBehavior
             return (ValidationResult.WithErrors(errors) as TResult)!;
         }
 
-        object validationResult = typeof(ValidationResult<>)
+        var validationResult = typeof(ValidationResult<>)
             .GetGenericTypeDefinition()
             .MakeGenericType(typeof(TResult).GenericTypeArguments[0])
             .GetMethod(nameof(ValidationResult.WithErrors))!
-            .Invoke(null, new object?[] { errors })!;
+            .Invoke(null, [errors])!;
 
         return (TResult)validationResult;
     }
