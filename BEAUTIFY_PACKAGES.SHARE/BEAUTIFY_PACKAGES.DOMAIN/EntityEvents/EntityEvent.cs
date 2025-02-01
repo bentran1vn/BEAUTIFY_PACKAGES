@@ -3,14 +3,14 @@ public class EntityEvent
 {
     public class SubscriptionEntity
     {
-        DateTimeOffset Created;
-        string Description;
-        int Duration;
-        Guid Id;
-        bool IsActivated;
-        bool IsDeleted;
-        DateTimeOffset? ModifiedOnUtc;
-        string Name;
-        decimal Price;
+        public DateTimeOffset Created;
+        public string Description;
+        public int Duration;
+        public Guid Id;
+        public bool IsActivated;
+        public bool IsDeleted;
+        public DateTimeOffset? ModifiedOnUtc;
+        public string Name;
+        public decimal Price;
     }
 }

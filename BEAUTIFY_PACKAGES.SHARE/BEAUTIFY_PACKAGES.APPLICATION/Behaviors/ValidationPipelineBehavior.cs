@@ -18,14 +18,14 @@ public class ValidationPipelineBehavior<TRequest, TResponse> : IPipelineBehavior
         RequestHandlerDelegate<TResponse> next,
         CancellationToken cancellationToken)
     {
-        Console.WriteLine("ValidationPipelineBehavior is executing.");
+      //  Console.WriteLine("ValidationPipelineBehavior is executing.");
         if (!_validators.Any())
         {
-            Console.WriteLine("No validators found for the request.");
+          //  Console.WriteLine("No validators found for the request.");
             return await next();
         }
 
-        Error[] errors = _validators
+        var errors = _validators
             .Select(validator => validator.Validate(request))
             .SelectMany(validationResult => validationResult.Errors)
             .Where(validationFailure => validationFailure is not null)
@@ -35,9 +35,9 @@ public class ValidationPipelineBehavior<TRequest, TResponse> : IPipelineBehavior
             .Distinct()
             .ToArray();
 
-        if (errors.Any())
+        if (errors.Length != 0)
         {
-            Console.WriteLine("Validation errors found.");
+          //  Console.WriteLine("Validation errors found.");
             return CreateValidationResult<TResponse>(errors);
         }
 
