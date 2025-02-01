@@ -28,10 +28,4 @@ public static class DomainEvents
         Guid IdEvent,
         Guid SubscriptionId
     ) : IDomainEvent, ICommand;
-
-    public record SubscriptionPriceUpdated(
-        Guid IdEvent,
-        Guid SubscriptionId,
-        decimal Price
-    ) : IDomainEvent, ICommand;
 }
