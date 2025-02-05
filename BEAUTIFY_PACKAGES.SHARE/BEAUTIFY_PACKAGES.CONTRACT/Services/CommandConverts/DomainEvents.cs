@@ -4,7 +4,7 @@ namespace BEAUTIFY_PACKAGES.BEAUTIFY_PACKAGES.CONTRACT.Services.CommandConverts;
 
 public static class DomainEvents
 {
-    public record SubscriptionCreated(
+    public record PostgreMigrate(
         Guid IdEvent,
         string Query
     ) : IDomainEvent, ICommand;
