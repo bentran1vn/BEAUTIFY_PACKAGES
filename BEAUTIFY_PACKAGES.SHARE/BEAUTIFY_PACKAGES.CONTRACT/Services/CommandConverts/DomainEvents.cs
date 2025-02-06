@@ -7,8 +7,8 @@ public static class DomainEvents
     public record PostgreMigrate(
         Guid IdEvent,
         string EntityType,
-        object? PrimaryKey,
+        object PrimaryKey,
         string Operation,
-        object Data
+        string Data
     ) : IDomainEvent, ICommand;
 }
