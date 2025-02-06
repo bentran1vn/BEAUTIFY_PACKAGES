@@ -9,6 +9,6 @@ public static class DomainEvents
         string EntityType,
         object? PrimaryKey,
         string Operation,
-        string Data
+        object Data
     ) : IDomainEvent, ICommand;
 }
