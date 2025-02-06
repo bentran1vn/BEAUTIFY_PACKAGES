@@ -6,6 +6,9 @@ public static class DomainEvents
 {
     public record PostgreMigrate(
         Guid IdEvent,
-        string Query
+        string EntityType,
+        object? PrimaryKey,
+        string Operation,
+        string Data
     ) : IDomainEvent, ICommand;
 }
