@@ -7,7 +7,7 @@ public class CurrentUserService(IHttpContextAccessor httpContextAccessor) : ICur
 {
     private readonly ClaimsPrincipal? _claimsPrincipal = httpContextAccessor?.HttpContext?.User;
 
-    public string? UserId => _claimsPrincipal?.FindFirstValue("UserId");
+    public Guid? UserId => Guid.Parse(_claimsPrincipal?.FindFirstValue("UserId") ?? string.Empty);
     public string? Role => _claimsPrincipal?.FindFirstValue(ClaimTypes.Role);
 
     public string? UserName => _claimsPrincipal?.FindFirstValue(ClaimTypes.Name);
