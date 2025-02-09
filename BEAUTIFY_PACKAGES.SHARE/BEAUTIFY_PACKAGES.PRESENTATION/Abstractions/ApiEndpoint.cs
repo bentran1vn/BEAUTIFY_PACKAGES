@@ -6,7 +6,7 @@ namespace BEAUTIFY_PACKAGES.BEAUTIFY_PACKAGES.PRESENTATION.Abstractions;
 
 public abstract class ApiEndpoint
 {
-    protected static IResult HandlerFailure(Result result) =>
+    public static IResult HandlerFailure(Result result) =>
         result switch
         {
             { IsSuccess: true } => throw new InvalidOperationException(),
