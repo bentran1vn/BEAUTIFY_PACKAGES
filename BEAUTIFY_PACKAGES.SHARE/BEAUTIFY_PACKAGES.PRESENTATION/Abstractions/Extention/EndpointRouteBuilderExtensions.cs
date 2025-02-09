@@ -16,11 +16,27 @@ public static class EndpointRouteBuilderExtensions
             => HandleCommand(sender, command));
     }
 
+    public static RouteHandlerBuilder MapPostCommandFromForm<TCommand>(
+        this IEndpointRouteBuilder builder,
+        string pattern)
+    {
+        return builder.MapPost(pattern, (ISender sender, [FromForm] TCommand command)
+            => HandleCommand(sender, command));
+    }
+
     public static RouteHandlerBuilder MapPutCommand<TCommand>(
         this IEndpointRouteBuilder builder,
         string pattern)
     {
         return builder.MapPut(pattern, (ISender sender, [FromBody] TCommand command)
+            => HandleCommand(sender, command));
+    }
+
+    public static RouteHandlerBuilder MapPutCommandFromFrom<TCommand>(
+        this IEndpointRouteBuilder builder,
+        string pattern)
+    {
+        return builder.MapPut(pattern, (ISender sender, [FromForm] TCommand command)
             => HandleCommand(sender, command));
     }
 
