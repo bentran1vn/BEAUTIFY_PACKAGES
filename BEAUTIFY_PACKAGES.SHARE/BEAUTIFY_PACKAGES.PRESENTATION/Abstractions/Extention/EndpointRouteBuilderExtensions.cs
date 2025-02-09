@@ -16,6 +16,23 @@ public static class EndpointRouteBuilderExtensions
             => HandleCommand(sender, command));
     }
 
+    public static RouteHandlerBuilder MapPutCommand<TCommand>(
+        this IEndpointRouteBuilder builder,
+        string pattern)
+    {
+        return builder.MapPut(pattern, (ISender sender, [FromBody] TCommand command)
+            => HandleCommand(sender, command));
+    }
+
+    public static RouteHandlerBuilder MapDeleteCommand<TCommand>(
+        this IEndpointRouteBuilder builder,
+        string pattern)
+    {
+        return builder.MapDelete(pattern, (ISender sender, [FromBody] TCommand command)
+            => HandleCommand(sender, command));
+    }
+
+
     private static async Task<IResult> HandleCommand<TCommand>(
         ISender sender,
         TCommand command)
