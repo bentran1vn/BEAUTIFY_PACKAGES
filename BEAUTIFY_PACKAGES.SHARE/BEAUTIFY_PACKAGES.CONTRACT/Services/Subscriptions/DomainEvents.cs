@@ -19,13 +19,9 @@ public static class DomainEvents
         Guid SubscriptionId
     ) : IDomainEvent, ICommand;
 
-    public record SubscriptionActivated(
+    public record SubscriptionStatusActivationChanged(
         Guid IdEvent,
         Guid SubscriptionId
     ) : IDomainEvent, ICommand;
 
-    public record SubscriptionDeactivated(
-        Guid IdEvent,
-        Guid SubscriptionId
-    ) : IDomainEvent, ICommand;
 }
