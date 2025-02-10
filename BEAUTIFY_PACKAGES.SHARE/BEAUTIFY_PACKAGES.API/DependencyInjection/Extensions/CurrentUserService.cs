@@ -11,5 +11,6 @@ public class CurrentUserService(IHttpContextAccessor httpContextAccessor) : ICur
     public string? Role => _claimsPrincipal?.FindFirstValue(ClaimTypes.Role);
 
     public string? UserName => _claimsPrincipal?.FindFirstValue(ClaimTypes.Name);
+    public Guid? ClinicId => Guid.Parse(_claimsPrincipal?.FindFirstValue("ClinicId") ?? string.Empty);
 
 }
