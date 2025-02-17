@@ -6,5 +6,5 @@ public static class DomainEvents
 {
     public record WorkingScheduleCreated(
         Guid IdEvent,
-        List<EntityEvent.WorkingScheduleEntity> WorkingScheduleEntities) : IDomainEvent;
+        List<EntityEvent.WorkingScheduleEntity> WorkingScheduleEntities) : IDomainEvent,ICommand;
 }
