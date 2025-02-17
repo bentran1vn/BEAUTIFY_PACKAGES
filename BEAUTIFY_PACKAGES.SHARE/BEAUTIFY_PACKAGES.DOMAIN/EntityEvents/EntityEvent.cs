@@ -1,5 +1,5 @@
 ﻿namespace BEAUTIFY_PACKAGES.BEAUTIFY_PACKAGES.DOMAIN.EntityEvents;
-public class EntityEvent
+public static class EntityEvent
 {
     public class SubscriptionEntity
     {
@@ -12,5 +12,17 @@ public class EntityEvent
         public DateTimeOffset? ModifiedOnUtc;
         public string Name;
         public decimal Price;
+    }
+
+    public class WorkingScheduleEntity
+    {
+        public Guid Id;
+        public Guid? DoctorId;
+        public Guid ClinicId;
+        public DateTimeOffset? ModifiedOnUtc;
+        public DateOnly Date;
+        public TimeSpan StartTime;
+        public TimeSpan EndTime;
+        public bool IsDeleted;
     }
 }
