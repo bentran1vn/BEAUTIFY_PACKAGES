@@ -10,5 +10,5 @@ public static class ClinicServiceEvent
     public record Category(Guid Id, string Name, string Description);
     
     public record Clinic(Guid Id, string Name, string Email, string Address,
-        string PhoneNumber,string? ProfilePictureUrl);
+        string PhoneNumber, string? ProfilePictureUrl);
 }
