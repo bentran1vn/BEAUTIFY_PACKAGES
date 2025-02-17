@@ -18,7 +18,6 @@ public static class EntityEvent
     {
         public Guid Id;
         public Guid? DoctorId;
-        public string? DoctorName;
         public Guid ClinicId;
         public DateTimeOffset? ModifiedOnUtc;
         public DateOnly Date;
