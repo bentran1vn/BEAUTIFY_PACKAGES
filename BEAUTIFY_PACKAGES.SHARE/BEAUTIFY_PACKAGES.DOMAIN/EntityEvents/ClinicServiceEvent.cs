@@ -5,7 +5,7 @@ public static class ClinicServiceEvent
     public record CreateClinicService(
         Guid Id, string Name, string Description,
         string[] CoverImage, string[] DescriptionImage,
-        decimal Price, Category Category, ICollection<Clinic> Clinic);
+         Category Category, ICollection<Clinic> Clinic);
     
     public record Category(Guid Id, string Name, string Description);
     
