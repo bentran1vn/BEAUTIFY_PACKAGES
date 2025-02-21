@@ -3,6 +3,7 @@ namespace BEAUTIFY_PACKAGES.BEAUTIFY_PACKAGES.DOMAIN.EntityEvents;
 public class PromotionEvent
 {
     public record CreateServicePromotion(
+        Guid PromotionId,
         Guid ServiceId,
         string Name,
         double DiscountPercent,
