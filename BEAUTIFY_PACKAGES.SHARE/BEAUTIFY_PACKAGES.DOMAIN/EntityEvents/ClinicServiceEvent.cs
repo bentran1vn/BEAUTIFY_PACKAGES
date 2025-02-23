@@ -4,11 +4,13 @@ public static class ClinicServiceEvent
 {
     public record CreateClinicService(
         Guid Id, string Name, string Description,
-        string[] CoverImage, string[] DescriptionImage,
+        Image[] CoverImages, Image[] DescriptionImages,
          Category Category, ICollection<Clinic> Clinic);
     
     public record Category(Guid Id, string Name, string Description);
     
     public record Clinic(Guid Id, string Name, string Email, string Address,
         string PhoneNumber, string? ProfilePictureUrl, bool? IsParent, Guid? ParentId);
+    
+    public record Image(Guid Id, int Index, string Url);
 }
