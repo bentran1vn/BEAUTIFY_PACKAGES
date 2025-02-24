@@ -25,4 +25,14 @@ public static class EntityEvent
         public TimeSpan EndTime;
         public bool IsDeleted;
     }
+
+    public class DoctorServiceEntity
+    {
+        public Guid Id;
+        public Guid ServiceId;
+        public string Name;
+        public string Description;
+        public decimal Price;
+        public string CategoryName;
+    }
 }
