@@ -9,4 +9,9 @@ public class DomainEvents
         Guid IdEvent,
         ClinicServiceEvent.CreateClinicService entity
     ) : IDomainEvent, ICommand;
+    
+    public record ClinicServiceUpdated(
+        Guid IdEvent,
+        ClinicServiceEvent.UpdateClinicService entity
+    ) : IDomainEvent, ICommand;
 }

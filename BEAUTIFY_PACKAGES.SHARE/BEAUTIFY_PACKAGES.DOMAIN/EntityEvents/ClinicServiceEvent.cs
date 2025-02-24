@@ -13,4 +13,9 @@ public static class ClinicServiceEvent
         string PhoneNumber, string? ProfilePictureUrl, bool? IsParent, Guid? ParentId);
     
     public record Image(Guid Id, int Index, string Url);
+    
+    public record UpdateClinicService(
+        Guid Id, string Name, string Description,
+        Image[] CoverImages, Image[] DescriptionImages,
+        Category Category, ICollection<Clinic> Clinic);
 }
