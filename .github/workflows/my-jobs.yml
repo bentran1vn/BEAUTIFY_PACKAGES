@@ -15,7 +15,7 @@ jobs:
       - name: Increment version in .csproj
         id: inc-version
         run: |
-          VERSION_FILE="BEAUTIFY_PACKAGES.SHARE/version.txt"
+          VERSION_FILE="version.txt"
           CS_PROJ_FILE="BEAUTIFY_PACKAGES.SHARE/BEAUTIFY_PACKAGES.SHARE.csproj"
           
           if [ ! -f "$VERSION_FILE" ]; then
