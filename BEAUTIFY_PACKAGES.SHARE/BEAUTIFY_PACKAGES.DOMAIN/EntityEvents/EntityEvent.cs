@@ -30,8 +30,9 @@ public static class EntityEvent
     {
         public Guid ServiceId;
         public UserEntity Doctor;
+        public Guid ClinicId;
     }
-    
+
     public class UserEntity
     {
         public Guid Id;
@@ -39,5 +40,15 @@ public static class EntityEvent
         public string Email;
         public string PhoneNumber;
         public string ProfilePictureUrl;
+        public ICollection<CertificateEntity> DoctorCertificates;
+    }
+
+    public class CertificateEntity
+    {
+        public Guid Id { get; set; }
+        public string CertificateUrl { get; set; }
+        public string CertificateName { get; set; }
+        public DateTimeOffset? ExpiryDate { get; set; }
+        public string? Note { get; set; }
     }
 }
