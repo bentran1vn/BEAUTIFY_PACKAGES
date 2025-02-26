@@ -42,6 +42,7 @@ public static class EntityEvent
         public string ProfilePictureUrl;
         public ICollection<CertificateEntity> DoctorCertificates;
     }
+    //Final Test
     public class CertificateEntity
     {
         public Guid Id { get; set; }
