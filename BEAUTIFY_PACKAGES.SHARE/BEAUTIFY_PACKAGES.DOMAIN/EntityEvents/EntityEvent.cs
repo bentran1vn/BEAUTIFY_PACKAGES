@@ -28,11 +28,16 @@ public static class EntityEvent
 
     public class DoctorServiceEntity
     {
-        public Guid Id;
         public Guid ServiceId;
-        public string Name;
-        public string Description;
-        public decimal Price;
-        public string CategoryName;
+        public UserEntity Doctor;
+    }
+    
+    public class UserEntity
+    {
+        public Guid Id;
+        public string FullName;
+        public string Email;
+        public string PhoneNumber;
+        public string ProfilePictureUrl;
     }
 }
