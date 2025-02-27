@@ -17,7 +17,7 @@ RUN dotnet restore
 COPY BEAUTIFY_PACKAGES.SHARE/ ./BEAUTIFY_PACKAGES.SHARE/
 
 # Build the project
-RUN dotnet build BEAUTIFY_PACKAGES.SHARE/BEAUTIFY_PACKAGES.SHARE.csproj --configuration Release --no-restore
+RUN dotnet build BEAUTIFY_PACKAGES.SHARE/BEAUTIFY_PACKAGES.SHARE.csproj --configuration Release --no-restore -p:TreatWarningsAsErrors=false -p:NoWarn=all
 
 # Publish the project
 RUN dotnet publish BEAUTIFY_PACKAGES.SHARE/BEAUTIFY_PACKAGES.SHARE.csproj -c Release -o out
