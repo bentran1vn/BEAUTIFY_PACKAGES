@@ -44,8 +44,9 @@ jobs:
           
           echo "$NEW_VERSION" > "$VERSION_FILE"
 
-          sed -i "s#<Version>$CURRENT_VERSION</Version>#<Version>$NEW_VERSION</Version>#" "$CS_PROJ_FILE"
+          sed -i "s#<Version>.*</Version>#<Version>$NEW_VERSION</Version>#" "$CS_PROJ_FILE"
 
+          cat "$CS_PROJ_FILE"
           echo "new_version=$NEW_VERSION" >> $GITHUB_OUTPUT
         
         
