@@ -28,6 +28,7 @@ public static class EntityEvent
 
     public class DoctorServiceEntity
     {
+        public Guid Id;
         public Guid ServiceId;
         public UserEntity Doctor;
         public Guid ClinicId;
