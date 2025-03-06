@@ -478,3 +478,5 @@ Temporary Items
 # End of https://www.toptal.com/developers/gitignore/api/macos,rider,intellij,aspnetcore,dotnetcore
 
 version.txt
+
+BEAUTIFY_PACKAGES.SHARE.csproj
