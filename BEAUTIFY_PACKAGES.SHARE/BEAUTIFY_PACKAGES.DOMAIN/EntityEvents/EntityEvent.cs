@@ -12,6 +12,8 @@ public static class EntityEvent
         public DateTimeOffset? ModifiedOnUtc;
         public string Name;
         public decimal Price;
+        public int LimitBranch;
+        public int LimitLiveStream;
     }
 
     public class WorkingScheduleEntity
@@ -43,6 +45,7 @@ public static class EntityEvent
         public string ProfilePictureUrl;
         public ICollection<CertificateEntity> DoctorCertificates;
     }
+
     //Final Test
     public class CertificateEntity
     {
