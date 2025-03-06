@@ -8,9 +8,9 @@ public static class Constant
     {
         public const string DOCTOR = "Doctor";
         public const string CUSTOMER = "Customer";
-        public const string CLINIC = "Clinic";
-        public const string ADMIN = "Admin";
-        public const string SYSTEM = "System";
+        public const string CLINIC = "Clinic Admin";
+        public const string ADMIN = "System Admin";
+        public const string SYSTEM = "System Staff";
         public const string CLINIC_STAFF = "Clinic Staff";
     }
 
