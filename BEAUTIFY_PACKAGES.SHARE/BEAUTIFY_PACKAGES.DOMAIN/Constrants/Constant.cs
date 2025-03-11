@@ -24,4 +24,11 @@ public static class Constant
         public const string ORDER_COMPLETED = "Completed";
         public const string ORDER_UNCOMPLETED = "Uncompleted";
     }
+
+    public class SurveyQuestionType
+    {
+        public const string TEXT = "Text";
+        public const string MULTIPLE_CHOICE = "Multiple Choice";
+        public const string SINGLE_CHOICE = "Single Choice";
+    }
 }
