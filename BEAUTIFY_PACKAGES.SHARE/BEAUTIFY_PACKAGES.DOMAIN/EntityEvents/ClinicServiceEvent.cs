@@ -18,6 +18,7 @@ public static class ClinicServiceEvent
         string Email,
         string City,
         string Address,
+        string FullAddress,
         string District,
         string Ward,
         string PhoneNumber,
