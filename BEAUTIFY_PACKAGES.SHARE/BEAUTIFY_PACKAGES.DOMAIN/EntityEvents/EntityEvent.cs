@@ -25,7 +25,7 @@ public static class EntityEvent
         public TimeSpan EndTime;
         public DateOnly Date;
         public Guid? ServiceId;
-        public Guid? ServiceName;
+        public string ServiceName;
         public Guid? DoctorId;
         public Guid? DoctorName;
         public Guid? ClinicId;
