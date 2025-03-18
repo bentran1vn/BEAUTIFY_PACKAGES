@@ -21,6 +21,7 @@ public static class EntityEvent
         public Guid Id;
         public string StepIndex;
         public Guid? CustomerId;
+        public string CustomerName;
         public TimeSpan StartTime;
         public TimeSpan EndTime;
         public DateOnly Date;
