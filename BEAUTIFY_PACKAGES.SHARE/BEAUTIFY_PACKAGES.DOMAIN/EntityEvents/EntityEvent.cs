@@ -27,7 +27,7 @@ public static class EntityEvent
         public Guid? ServiceId;
         public string ServiceName;
         public Guid? DoctorId;
-        public Guid? DoctorName;
+        public string? DoctorName;
         public Guid? ClinicId;
         public string ClinicName;
         public string Status;
