@@ -15,6 +15,23 @@ public static class EntityEvent
         public int LimitBranch;
         public int LimitLiveStream;
     }
+    
+    public class CustomerScheduleEntity
+    {
+        public Guid Id;
+        public Guid? CustomerId;
+        public TimeSpan StartTime;
+        public TimeSpan EndTime;
+        public DateOnly Date;
+        public Guid? ServiceId;
+        public Guid? ServiceName;
+        public Guid? DoctorId;
+        public Guid? DoctorName;
+        public Guid? ClinicId;
+        public string ClinicName;
+        public string Status;
+        
+    }
 
     public class WorkingScheduleEntity
     {

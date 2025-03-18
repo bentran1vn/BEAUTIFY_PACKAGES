@@ -21,6 +21,7 @@ public static class Constant
     public class OrderStatus
     {
         public const string ORDER_PENDING = "Pending";
+        public const string ORDER_IN_PROGRESS = "In Progress";
         public const string ORDER_COMPLETED = "Completed";
         public const string ORDER_UNCOMPLETED = "Uncompleted";
     }
