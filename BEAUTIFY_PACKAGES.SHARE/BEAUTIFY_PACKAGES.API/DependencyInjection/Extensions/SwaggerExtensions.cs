@@ -10,7 +10,6 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 using Swashbuckle.AspNetCore.SwaggerUI;
 
 namespace BEAUTIFY_PACKAGES.BEAUTIFY_PACKAGES.API.DependencyInjection.Extensions;
-
 public static class SwaggerExtensions
 {
     public static void AddSwaggerAPI(this IServiceCollection services)
@@ -30,7 +29,7 @@ Example: 'Bearer 12345abcdef'",
                 Scheme = JwtBearerDefaults.AuthenticationScheme,
                 BearerFormat = "JWT",
             });
-            
+
             c.AddSecurityRequirement(new OpenApiSecurityRequirement()
             {
                 {
@@ -48,15 +47,14 @@ Example: 'Bearer 12345abcdef'",
                     new List<string>()
                 }
             });
-            
+
             c.OperationFilter<SwaggerFormDataOperationFilter>();
-            
+
             // c.EnableAnnotations();
-            
         });
         services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
     }
-    
+
     public class SwaggerFormDataOperationFilter : IOperationFilter
     {
         public void Apply(OpenApiOperation operation, OperationFilterContext context)
@@ -73,10 +71,12 @@ Example: 'Bearer 12345abcdef'",
                 {
                     operation.RequestBody = new OpenApiRequestBody
                     {
-                        Content = {
+                        Content =
+                        {
                             ["multipart/form-data"] = new OpenApiMediaType
                             {
-                                Schema = context.SchemaGenerator.GenerateSchema(param.ParameterType, context.SchemaRepository)
+                                Schema = context.SchemaGenerator.GenerateSchema(param.ParameterType,
+                                    context.SchemaRepository)
                             }
                         }
                     };
@@ -92,7 +92,7 @@ Example: 'Bearer 12345abcdef'",
         {
             foreach (var version in app.DescribeApiVersions().Select(version => version.GroupName))
                 options.SwaggerEndpoint($"/swagger/{version}/swagger.json", version);
-
+            options.EnableFilter();
             options.DisplayRequestDuration();
             options.EnableTryItOutByDefault();
             options.DocExpansion(DocExpansion.None);
