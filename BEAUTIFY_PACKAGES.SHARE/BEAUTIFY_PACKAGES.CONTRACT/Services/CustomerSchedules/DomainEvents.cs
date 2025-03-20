@@ -15,6 +15,6 @@ public static class DomainEvents
         Guid IdCustomerSchedule
     ) : IDomainEvent, ICommand;
 
-    public record CustomerScheduleUpdateAfterPaymentCompleted(Guid IdEvent, Guid IdCustomerSchedule)
+    public record CustomerScheduleUpdateAfterPaymentCompleted(Guid IdEvent, Guid IdCustomerSchedule, string Status)
         : IDomainEvent, ICommand;
 }
