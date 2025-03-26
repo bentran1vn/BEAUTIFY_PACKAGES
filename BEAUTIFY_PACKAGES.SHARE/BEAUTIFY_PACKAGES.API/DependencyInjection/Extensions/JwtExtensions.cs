@@ -71,15 +71,15 @@ public static class JwtExtensions
             });
 
 
-services.AddAuthorization(options =>
-{
-    options.AddPolicy(Constant.Role.CLINIC_STAFF, policy => policy.RequireRole(Constant.Role.CLINIC_STAFF));
-    options.AddPolicy(Constant.Role.CLINIC_ADMIN, policy => policy.RequireRole(Constant.Role.CLINIC_ADMIN));
-    options.AddPolicy(Constant.Role.DOCTOR, policy => policy.RequireRole(Constant.Role.DOCTOR));
-    options.AddPolicy(Constant.Role.CUSTOMER, policy => policy.RequireRole(Constant.Role.CUSTOMER));
-    options.AddPolicy(Constant.Role.SYSTEM_ADMIN, policy => policy.RequireRole(Constant.Role.SYSTEM_ADMIN));
-    options.AddPolicy(Constant.Role.SYSTEM_STAFF, policy => policy.RequireRole(Constant.Role.SYSTEM_STAFF));
-});
+        services.AddAuthorizationBuilder()
+            .AddPolicy(Constant.Role.CLINIC_STAFF, policy => policy.RequireRole(Constant.Role.CLINIC_STAFF))
+            .AddPolicy(Constant.Role.CLINIC_ADMIN, policy => policy.RequireRole(Constant.Role.CLINIC_ADMIN))
+            .AddPolicy(Constant.Role.DOCTOR, policy => policy.RequireRole(Constant.Role.DOCTOR))
+            .AddPolicy(Constant.Role.CUSTOMER, policy => policy.RequireRole(Constant.Role.CUSTOMER))
+            .AddPolicy(Constant.Role.SYSTEM_ADMIN, policy => policy.RequireRole(Constant.Role.SYSTEM_ADMIN))
+            .AddPolicy(Constant.Role.SYSTEM_STAFF, policy => policy.RequireRole(Constant.Role.SYSTEM_STAFF));
+        
+       
         // services.AddScoped<CustomJwtBearerEvents>();
     }
 }

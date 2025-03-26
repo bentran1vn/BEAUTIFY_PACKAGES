@@ -16,6 +16,21 @@ public static class EntityEvent
         public int LimitLiveStream;
     }
 
+    public class WorkingScheduleEntity
+    {
+        public Guid Id;
+        public Guid? DoctorId;
+        public Guid ClinicId;
+        public DateTimeOffset? ModifiedOnUtc;
+        public DateOnly Date;
+        public TimeSpan StartTime;
+        public TimeSpan EndTime;
+        public bool IsDeleted;
+        public CustomerScheduleEntity CustomerScheduleEntity;
+        public string? Status;
+        public string? Note;
+    }
+
     public class CustomerScheduleEntity
     {
         public Guid Id;
@@ -47,18 +62,6 @@ public static class EntityEvent
         public DateOnly DateCompleted;
     }
 
-
-    public class WorkingScheduleEntity
-    {
-        public Guid Id;
-        public Guid? DoctorId;
-        public Guid ClinicId;
-        public DateTimeOffset? ModifiedOnUtc;
-        public DateOnly Date;
-        public TimeSpan StartTime;
-        public TimeSpan EndTime;
-        public bool IsDeleted;
-    }
 
     public class DoctorServiceEntity
     {
