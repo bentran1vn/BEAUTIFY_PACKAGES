@@ -38,9 +38,9 @@ public static class EntityEvent
         public string StepIndex;
         public Guid? CustomerId;
         public string CustomerName;
-        public TimeSpan StartTime;
-        public TimeSpan EndTime;
-        public DateOnly Date;
+        public TimeSpan? StartTime;
+        public TimeSpan? EndTime;
+        public DateOnly? Date;
         public Guid? ServiceId;
         public string ServiceName;
         public Guid? DoctorId;
