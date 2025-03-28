@@ -20,6 +20,7 @@ public static class EntityEvent
     {
         public Guid Id;
         public Guid? DoctorId;
+        public required Guid CustomerScheduleId;
         public Guid ClinicId;
         public DateTimeOffset? ModifiedOnUtc;
         public DateOnly Date;
