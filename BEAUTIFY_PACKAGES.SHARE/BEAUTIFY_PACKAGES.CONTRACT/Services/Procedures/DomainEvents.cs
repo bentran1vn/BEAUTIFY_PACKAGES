@@ -9,4 +9,9 @@ public class DomainEvents
         Guid IdEvent,
         ProcedureEvent.CreateProcedure entity
     ) : IDomainEvent, ICommand;
+    
+    public record ProcedureDelete(
+        Guid IdEvent,
+        ProcedureEvent.DeleteProcedure entity
+    ) : IDomainEvent, ICommand;
 }
