@@ -14,4 +14,9 @@ public class DomainEvents
         Guid IdEvent,
         ClinicServiceEvent.UpdateClinicService entity
     ) : IDomainEvent, ICommand;
+    
+    public record ClinicServiceDeleted(
+        Guid IdEvent,
+        ClinicServiceEvent.DeleteClinicService entity
+    ) : IDomainEvent, ICommand;
 }

@@ -36,4 +36,6 @@ public static class ClinicServiceEvent
         Image[] DescriptionImages,
         Category Category,
         ICollection<Clinic> Clinic);
+
+    public record DeleteClinicService(Guid Id);
 }
