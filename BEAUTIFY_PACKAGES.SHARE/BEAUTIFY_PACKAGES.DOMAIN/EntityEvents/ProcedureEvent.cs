@@ -15,7 +15,11 @@ public class ProcedureEvent
         ICollection<ProcedurePriceType> procedurePriceTypes
     );
     
-    public record DeleteProcedure(Guid Id, Guid ServiceId);
+    public record DeleteProcedure(Guid Id, Guid ServiceId,
+        decimal MaxPrice,
+        decimal MinPrice,
+        decimal DiscountMaxPrice,
+        decimal DiscountMinPrice);
 
     public record ProcedurePriceType(Guid Id, string Name, decimal Price, int Duration, bool IsDefault);
 }
