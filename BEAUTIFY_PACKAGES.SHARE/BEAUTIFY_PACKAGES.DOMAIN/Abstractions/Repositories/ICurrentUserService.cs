@@ -5,4 +5,5 @@ public interface ICurrentUserService
     string? UserName { get; }
     string? Role { get; }
     Guid? ClinicId { get; }
+    
 }

@@ -12,19 +12,57 @@ public static class EntityEvent
         public DateTimeOffset? ModifiedOnUtc;
         public string Name;
         public decimal Price;
+        public int LimitBranch;
+        public int LimitLiveStream;
     }
 
     public class WorkingScheduleEntity
     {
         public Guid Id;
         public Guid? DoctorId;
+        public required Guid CustomerScheduleId;
         public Guid ClinicId;
         public DateTimeOffset? ModifiedOnUtc;
         public DateOnly Date;
         public TimeSpan StartTime;
         public TimeSpan EndTime;
         public bool IsDeleted;
+        public CustomerScheduleEntity CustomerScheduleEntity;
+        public string? Status;
+        public string? Note;
     }
+
+    public class CustomerScheduleEntity
+    {
+        public Guid Id;
+        public string StepIndex;
+        public Guid? CustomerId;
+        public string CustomerName;
+        public TimeSpan? StartTime;
+        public TimeSpan? EndTime;
+        public DateOnly? Date;
+        public Guid? ServiceId;
+        public string ServiceName;
+        public Guid? DoctorId;
+        public string? DoctorName;
+        public Guid? ClinicId;
+        public string ClinicName;
+        public string Status;
+        public string CurrentProcedureName;
+        public ICollection<ProcedurePriceTypeEntity> CompletedProcedures;
+        public ICollection<ProcedurePriceTypeEntity> PendingProcedures;
+    }
+
+    public class ProcedurePriceTypeEntity
+    {
+        public Guid Id;
+        public string StepIndex;
+        public string Name;
+        public decimal Price;
+        public int Duration;
+        public DateOnly DateCompleted;
+    }
+
 
     public class DoctorServiceEntity
     {
@@ -43,6 +81,7 @@ public static class EntityEvent
         public string ProfilePictureUrl;
         public ICollection<CertificateEntity> DoctorCertificates;
     }
+
     //Final Test
     public class CertificateEntity
     {

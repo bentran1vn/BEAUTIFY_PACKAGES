@@ -10,7 +10,6 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 using Swashbuckle.AspNetCore.SwaggerUI;
 
 namespace BEAUTIFY_PACKAGES.BEAUTIFY_PACKAGES.API.DependencyInjection.Extensions;
-
 public static class SwaggerExtensions
 {
     public static void AddSwaggerAPI(this IServiceCollection services)
@@ -21,16 +20,16 @@ public static class SwaggerExtensions
             {
                 Description = @"JWT Authorization header using the Bearer scheme. 
 
-Enter 'Bearer' [space] and then your token in the text input below.
+Enter  your token in the text input below.
 
-Example: 'Bearer 12345abcdef'",
+Example: 'ey12345abcdef'",
                 Name = "Authorization",
                 In = ParameterLocation.Header,
                 Type = SecuritySchemeType.Http,
                 Scheme = JwtBearerDefaults.AuthenticationScheme,
                 BearerFormat = "JWT",
             });
-            
+
             c.AddSecurityRequirement(new OpenApiSecurityRequirement()
             {
                 {
@@ -48,16 +47,15 @@ Example: 'Bearer 12345abcdef'",
                     new List<string>()
                 }
             });
-            
+
             c.OperationFilter<SwaggerFormDataOperationFilter>();
-            
+
             // c.EnableAnnotations();
-            
         });
         services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
     }
-    
-    public class SwaggerFormDataOperationFilter : IOperationFilter
+
+    private class SwaggerFormDataOperationFilter : IOperationFilter
     {
         public void Apply(OpenApiOperation operation, OperationFilterContext context)
         {
@@ -67,20 +65,20 @@ Example: 'Bearer 12345abcdef'",
                     .Any(attr => attr.GetType() == typeof(FromFormAttribute)))
                 .ToList();
 
-            if (formParameters.Any())
+            if (formParameters.Count == 0) return;
+            foreach (var param in formParameters)
             {
-                foreach (var param in formParameters)
+                operation.RequestBody = new OpenApiRequestBody
                 {
-                    operation.RequestBody = new OpenApiRequestBody
+                    Content =
                     {
-                        Content = {
-                            ["multipart/form-data"] = new OpenApiMediaType
-                            {
-                                Schema = context.SchemaGenerator.GenerateSchema(param.ParameterType, context.SchemaRepository)
-                            }
+                        ["multipart/form-data"] = new OpenApiMediaType
+                        {
+                            Schema = context.SchemaGenerator.GenerateSchema(param.ParameterType,
+                                context.SchemaRepository)
                         }
-                    };
-                }
+                    }
+                };
             }
         }
     }
@@ -92,7 +90,7 @@ Example: 'Bearer 12345abcdef'",
         {
             foreach (var version in app.DescribeApiVersions().Select(version => version.GroupName))
                 options.SwaggerEndpoint($"/swagger/{version}/swagger.json", version);
-
+            options.EnableFilter();
             options.DisplayRequestDuration();
             options.EnableTryItOutByDefault();
             options.DocExpansion(DocExpansion.None);
