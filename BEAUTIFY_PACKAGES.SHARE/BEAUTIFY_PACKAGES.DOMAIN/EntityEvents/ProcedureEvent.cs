@@ -14,6 +14,8 @@ public class ProcedureEvent
         string[] coverImage,
         ICollection<ProcedurePriceType> procedurePriceTypes
     );
+    
+    public record DeleteProcedure(Guid Id, Guid ServiceId);
 
     public record ProcedurePriceType(Guid Id, string Name, decimal Price, int Duration, bool IsDefault);
 }
