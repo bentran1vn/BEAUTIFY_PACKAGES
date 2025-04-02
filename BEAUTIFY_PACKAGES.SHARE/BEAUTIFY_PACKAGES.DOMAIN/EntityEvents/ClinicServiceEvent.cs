@@ -6,7 +6,6 @@ public static class ClinicServiceEvent
         string Name,
         string Description,
         Image[] CoverImages,
-        Image[] DescriptionImages,
         Category Category,
         ICollection<Clinic> Clinic);
 
@@ -33,7 +32,6 @@ public static class ClinicServiceEvent
         string Name,
         string Description,
         Image[] CoverImages,
-        Image[] DescriptionImages,
         Category Category,
         ICollection<Clinic> Clinic);
 

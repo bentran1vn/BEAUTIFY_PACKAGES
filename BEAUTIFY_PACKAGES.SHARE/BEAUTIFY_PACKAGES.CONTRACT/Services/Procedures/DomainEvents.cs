@@ -14,4 +14,9 @@ public class DomainEvents
         Guid IdEvent,
         ProcedureEvent.DeleteProcedure entity
     ) : IDomainEvent, ICommand;
+    
+    public record ProcedureUpdate(
+        Guid IdEvent,
+        ProcedureEvent.CreateProcedure entity
+    ) : IDomainEvent, ICommand;
 }
