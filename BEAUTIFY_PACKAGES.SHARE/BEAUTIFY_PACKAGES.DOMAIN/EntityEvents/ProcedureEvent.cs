@@ -11,7 +11,6 @@ public class ProcedureEvent
         decimal? DiscountMaxPrice,
         decimal? DiscountMinPrice,
         int StepIndex,
-        string[] coverImage,
         ICollection<ProcedurePriceType> procedurePriceTypes
     );
     
