@@ -47,6 +47,7 @@ public static class EntityEvent
         public Guid? ClinicId;
         public string ClinicName;
         public string Status;
+        public string DoctorNote;
         public ProcedurePriceTypeEntity CurrentProcedure;
         public ICollection<ProcedurePriceTypeEntity> CompletedProcedures;
         public ICollection<ProcedurePriceTypeEntity> PendingProcedures;
