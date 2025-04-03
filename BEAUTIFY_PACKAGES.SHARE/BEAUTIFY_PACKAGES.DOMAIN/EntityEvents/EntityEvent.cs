@@ -35,7 +35,6 @@ public static class EntityEvent
     public class CustomerScheduleEntity
     {
         public Guid Id;
-        public string StepIndex;
         public Guid? CustomerId;
         public string CustomerName;
         public TimeSpan? StartTime;
@@ -48,7 +47,7 @@ public static class EntityEvent
         public Guid? ClinicId;
         public string ClinicName;
         public string Status;
-        public string CurrentProcedureName;
+        public ProcedurePriceTypeEntity CurrentProcedure;
         public ICollection<ProcedurePriceTypeEntity> CompletedProcedures;
         public ICollection<ProcedurePriceTypeEntity> PendingProcedures;
     }
@@ -58,7 +57,6 @@ public static class EntityEvent
         public Guid Id;
         public string StepIndex;
         public string Name;
-        public decimal Price;
         public int Duration;
         public DateOnly DateCompleted;
     }
