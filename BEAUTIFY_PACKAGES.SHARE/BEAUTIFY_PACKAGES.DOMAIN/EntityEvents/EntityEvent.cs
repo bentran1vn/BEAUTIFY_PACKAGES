@@ -47,7 +47,7 @@ public static class EntityEvent
         public Guid? ClinicId;
         public string ClinicName;
         public string Status;
-        public string DoctorNote;
+        public string? DoctorNote;
         public ProcedurePriceTypeEntity CurrentProcedure;
         public ICollection<ProcedurePriceTypeEntity> CompletedProcedures;
         public ICollection<ProcedurePriceTypeEntity> PendingProcedures;
@@ -59,7 +59,7 @@ public static class EntityEvent
         public string StepIndex;
         public string Name;
         public int Duration;
-        public DateOnly DateCompleted;
+        public DateOnly? DateCompleted;
     }
 
 
