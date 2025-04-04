@@ -24,11 +24,12 @@ public static class DomainEvents
         string DoctorNote
     ) : IDomainEvent, ICommand;
 
-    public record CustomerScheduleUpdateDateAndTime(
+    public record CustomerScheduleUpdateDateAndTimeAndStatus(
         Guid IdEvent,
         Guid IdCustomerSchedule,
         TimeSpan StartTime,
         TimeSpan EndTime,
-        DateOnly Date
+        DateOnly Date,
+        string Status
     ) : IDomainEvent, ICommand;
 }
