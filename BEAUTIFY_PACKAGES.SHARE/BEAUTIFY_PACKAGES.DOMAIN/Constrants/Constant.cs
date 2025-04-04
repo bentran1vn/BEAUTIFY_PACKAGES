@@ -24,6 +24,7 @@ public static class Constant
         public const string ORDER_IN_PROGRESS = "In Progress";
         public const string ORDER_COMPLETED = "Completed";
         public const string ORDER_UNCOMPLETED = "Uncompleted";
+        public const string ORDER_WAITING_APPROVAL = "Waiting Approval";
     }
 
     public class SurveyQuestionType
