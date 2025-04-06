@@ -5,6 +5,7 @@ public static class ClinicServiceEvent
         Guid Id,
         string Name,
         string Description,
+        Clinic Branding,
         Image[] CoverImages,
         Category Category,
         ICollection<Clinic> Clinic);
