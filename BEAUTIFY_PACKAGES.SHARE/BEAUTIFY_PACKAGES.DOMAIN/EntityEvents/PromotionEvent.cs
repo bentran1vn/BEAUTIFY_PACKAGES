@@ -22,7 +22,8 @@ public class PromotionEvent
         decimal DiscountMaxPrice,
         decimal DiscountMinPrice,
         DateTime StartDay,
-        DateTime EndDate);
+        DateTime EndDate,
+        bool IsActivated);
     
     public record RemoveServicePromotion(
         Guid ServiceId,
