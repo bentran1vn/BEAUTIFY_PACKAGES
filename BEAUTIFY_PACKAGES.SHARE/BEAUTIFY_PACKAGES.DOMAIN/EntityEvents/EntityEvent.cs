@@ -48,7 +48,7 @@ public static class EntityEvent
         public string ClinicName;
         public string Status;
         public string? DoctorNote;
-        public string OrderId;
+        public Guid OrderId;
         public ProcedurePriceTypeEntity CurrentProcedure;
         public ICollection<ProcedurePriceTypeEntity> CompletedProcedures;
         public ICollection<ProcedurePriceTypeEntity> PendingProcedures;
