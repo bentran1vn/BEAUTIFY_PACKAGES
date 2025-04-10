@@ -5,6 +5,6 @@ public class DomainEvents
 {
     public record DoctorFromClinicDeleted(
         Guid IdEvent,
-        Guid IdDoctorService
+        Guid IdDoctor
     ) : IDomainEvent, ICommand;
 }
