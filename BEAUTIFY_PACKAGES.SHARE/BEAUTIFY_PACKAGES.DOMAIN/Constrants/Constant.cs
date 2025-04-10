@@ -33,5 +33,10 @@ public static class Constant
         public const string MULTIPLE_CHOICE = "Multiple Choice";
         public const string SINGLE_CHOICE = "Single Choice";
     }
+
+    public class Policy
+    {
+        public const string POLICY_DOCTOR_AND_CUSTOMER = "Doctor and Customer";
+    }
     //Test
 }
