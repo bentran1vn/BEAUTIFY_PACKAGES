@@ -37,6 +37,10 @@ public static class Constant
     public class Policy
     {
         public const string POLICY_DOCTOR_AND_CUSTOMER = "Doctor and Customer";
+        public const string POLICY_CLINIC_ADMIN_AND_CLINIC_STAFF = "Clinic Admin and Clinic Staff";
+        public const string POLICY_SYSTEM_ADMIN = "System Admin";
+        public const string POLICY_SYSTEM_STAFF = "System Staff";
+        public const string POLICY_CLINIC_STAFF = "Clinic Staff";
     }
     //Test
 }
