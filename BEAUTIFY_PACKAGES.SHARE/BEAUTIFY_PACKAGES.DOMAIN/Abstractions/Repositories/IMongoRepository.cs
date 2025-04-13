@@ -1,5 +1,6 @@
 ﻿using System.Linq.Expressions;
 using BEAUTIFY_PACKAGES.BEAUTIFY_PACKAGES.DOMAIN.Abstractions.Entities;
+using MongoDB.Driver;
 using MongoDB.Driver.Linq;
 
 namespace BEAUTIFY_PACKAGES.BEAUTIFY_PACKAGES.DOMAIN.Abstractions.Repositories;
@@ -27,6 +28,12 @@ public interface IMongoRepository<TDocument>
 
     Task InsertOneAsync(TDocument document);
 
+     Task<UpdateResult> UpdateOneAsync(
+        FilterDefinition<TDocument> filter,
+        UpdateDefinition<TDocument> update,
+        UpdateOptions options = null,
+        CancellationToken cancellationToken = default);
+    
     void InsertMany(ICollection<TDocument> documents);
 
     Task InsertManyAsync(ICollection<TDocument> documents);
