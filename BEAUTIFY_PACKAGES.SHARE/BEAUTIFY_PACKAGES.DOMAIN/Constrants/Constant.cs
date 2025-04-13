@@ -65,27 +65,26 @@ public static class Constant
     {
         public static class WalletType
         {
-            public const int SYSTEM = 0;
-            public const int USER = 1;
-            public const int CLINIC = 2;
+            public const string SYSTEM = "System";
+            public const string USER = "User";
+            public const string CLINIC = "Clinic";
         }
 
         public static class TransactionType
         {
-            public const int DEPOSIT = 0;
-            public const int WITHDRAWAL = 1;
-            public const int TRANSFER = 2;
+            public const string DEPOSIT = "Deposit";
+            public const string WITHDRAWAL = "Withdrawal";
+            public const string TRANSFER = "Transfer";
         }
 
         public static class TransactionStatus
         {
-            public const int PENDING = 0;
-            public const int COMPLETED = 1;
-            public const int FAILED = 2;
-            public const int CANCELLED = 3;
+            public const string PENDING = "Pending";
+            public const string COMPLETED = "Completed";
+            public const string FAILED = "Failed";
+            public const string CANCELLED = "Cancelled";
         }
     }
 
     #endregion
-
 }
