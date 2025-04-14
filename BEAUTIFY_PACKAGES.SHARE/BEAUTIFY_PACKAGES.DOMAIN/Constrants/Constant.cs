@@ -83,6 +83,9 @@ public static class Constant
             public const string COMPLETED = "Completed";
             public const string FAILED = "Failed";
             public const string CANCELLED = "Cancelled";
+            public const string WAITING_APPROVAL = "Waiting Approval";
+            public const string REJECTED = "Rejected";
+            public const string WAITING_FOR_PAYMENT = "Waiting for Payment";
         }
     }
 
