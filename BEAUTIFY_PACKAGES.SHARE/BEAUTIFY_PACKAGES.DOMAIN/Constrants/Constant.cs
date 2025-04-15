@@ -76,6 +76,8 @@ public static class Constant
             public const string WITHDRAWAL = "Withdrawal";
             public const string TRANSFER = "Transfer";
             public const string SERVICE_DEPOSIT = "Service Deposit";
+            public const string SERVICE_DEPOSIT_REFUND = "Service Deposit Refund";
+            
         }
 
         public static class TransactionStatus
