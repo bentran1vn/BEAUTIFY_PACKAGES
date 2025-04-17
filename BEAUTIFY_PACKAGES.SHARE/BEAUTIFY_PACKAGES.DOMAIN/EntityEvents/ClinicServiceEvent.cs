@@ -19,6 +19,8 @@ public static class ClinicServiceEvent
         string City,
         string Address,
         string FullAddress,
+        TimeSpan WorkingTimeStart,
+        TimeSpan WorkingTimeEnd,
         string District,
         string Ward,
         string PhoneNumber,
