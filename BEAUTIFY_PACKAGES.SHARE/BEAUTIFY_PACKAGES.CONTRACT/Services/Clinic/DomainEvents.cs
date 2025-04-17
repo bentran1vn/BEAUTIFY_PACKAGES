@@ -13,4 +13,14 @@ public class DomainEvents
         Guid IdEvent,
         ClinicEvent.InActivatedClinic entity
     ) : IDomainEvent, ICommand;
+    
+    public record ClinicUpdated( 
+        Guid IdEvent,
+        ClinicEvent.ClinicUpdated entity
+    ) : IDomainEvent, ICommand;
+    
+    public record ClinicDeleted( 
+        Guid IdEvent,
+        ClinicEvent.ClinicDeleted entity
+    ) : IDomainEvent, ICommand;
 }
