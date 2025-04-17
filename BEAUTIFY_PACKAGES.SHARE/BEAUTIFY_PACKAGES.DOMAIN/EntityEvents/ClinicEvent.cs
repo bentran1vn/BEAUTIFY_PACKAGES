@@ -21,6 +21,6 @@ public class ClinicEvent
         Guid? ParentId
     );
 
-    public record ClinicDeleted(Guid ClinicId, bool IsParent);
+    public record ClinicDeleted(Guid ClinicId, bool IsParent, Guid? ParentId);
 
 }
