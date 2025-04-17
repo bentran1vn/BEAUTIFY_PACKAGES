@@ -9,4 +9,7 @@ public static class DomainEvents
 
     public record DoctorServiceDeleted(Guid IdEvent, Guid ServiceId, List<Guid> DoctorServiceIds)
         : IDomainEvent, ICommand;
+
+    public record DoctorServiceUpdated(Guid IdEvent, EntityEvent.DoctorServiceEntity entity)
+        : IDomainEvent, ICommand;
 }
