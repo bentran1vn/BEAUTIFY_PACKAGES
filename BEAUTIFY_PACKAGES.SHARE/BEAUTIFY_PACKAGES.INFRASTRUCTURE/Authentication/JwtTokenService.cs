@@ -11,7 +11,7 @@ namespace BEAUTIFY_PACKAGES.BEAUTIFY_PACKAGES.INFRASTRUCTURE.Authentication;
 
 public class JwtTokenService : IJwtTokenService
 {
-    private readonly JwtOption jwtOption = new JwtOption();
+    private readonly JwtOption jwtOption = new();
 
     public JwtTokenService(IConfiguration configuration)
     {
@@ -27,7 +27,8 @@ public class JwtTokenService : IJwtTokenService
             issuer: jwtOption.Issuer,
             audience: jwtOption.Audience,
             claims: claims,
-            expires: DateTime.Now.AddHours(jwtOption.ExpireMin),
+           // expires: DateTime.Now.AddHours(jwtOption.ExpireMin),
+           expires: DateTime.Now.AddMinutes(jwtOption.ExpireMin),
             signingCredentials: signinCredentials
         );
 
@@ -38,11 +39,9 @@ public class JwtTokenService : IJwtTokenService
     public string GenerateRefreshToken()
     {
         var randomNumber = new byte[32];
-        using (var rng = RandomNumberGenerator.Create())
-        {
-            rng.GetBytes(randomNumber);
-            return Convert.ToBase64String(randomNumber);
-        }
+        using var rng = RandomNumberGenerator.Create();
+        rng.GetBytes(randomNumber);
+        return Convert.ToBase64String(randomNumber);
     }
 
     public (ClaimsPrincipal, bool) GetPrincipalFromExpiredToken(string token)
@@ -64,9 +63,9 @@ public class JwtTokenService : IJwtTokenService
         {
             // First, try to validate the token with lifetime validation
             tokenValidationParameters.ValidateLifetime = true;
-            var principal = tokenHandler.ValidateToken(token, tokenValidationParameters, out SecurityToken securityToken);
+            var principal = tokenHandler.ValidateToken(token, tokenValidationParameters, out var securityToken);
         
-            if (!(securityToken is JwtSecurityToken jwtSecurityToken) || 
+            if (securityToken is not JwtSecurityToken jwtSecurityToken || 
                 !jwtSecurityToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase))
             {
                 throw new SecurityTokenException("Invalid token");
@@ -78,9 +77,9 @@ public class JwtTokenService : IJwtTokenService
         {
             // Token is expired, validate without lifetime check
             tokenValidationParameters.ValidateLifetime = false;
-            var principal = tokenHandler.ValidateToken(token, tokenValidationParameters, out SecurityToken securityToken);
+            var principal = tokenHandler.ValidateToken(token, tokenValidationParameters, out var securityToken);
         
-            if (!(securityToken is JwtSecurityToken jwtSecurityToken) || 
+            if (securityToken is not JwtSecurityToken jwtSecurityToken || 
                 !jwtSecurityToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase))
             {
                 throw new SecurityTokenException("Invalid token");
