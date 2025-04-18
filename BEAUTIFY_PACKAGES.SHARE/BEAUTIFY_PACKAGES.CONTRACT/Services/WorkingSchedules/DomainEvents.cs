@@ -21,4 +21,12 @@ public static class DomainEvents
         Guid Id,
         List<EntityEvent.WorkingScheduleEntity> WorkingScheduleEntities,
         string ClinicName) : IDomainEvent, ICommand;
+
+    public record ClinicScheduleCapacityChanged(
+        Guid IdEvent,
+        Guid ShiftGroupId,
+        int OldCapacity,
+        int NewCapacity,
+        List<EntityEvent.WorkingScheduleEntity> WorkingScheduleEntities
+    ) : IDomainEvent, ICommand;
 }
