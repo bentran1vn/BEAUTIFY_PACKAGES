@@ -17,7 +17,8 @@ public static class DomainEvents
         string DoctorName) : IDomainEvent, ICommand;
 
     public record ClinicEmptyScheduleCreated(
+        Guid IdEvent,
         Guid Id,
         List<EntityEvent.WorkingScheduleEntity> WorkingScheduleEntities,
-        string ClinicName): IDomainEvent, ICommand;
+        string ClinicName) : IDomainEvent, ICommand;
 }
