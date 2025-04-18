@@ -19,10 +19,10 @@ public static class EntityEvent
     public class WorkingScheduleEntity
     {
         public Guid ClinicId;
-        public CustomerScheduleEntity CustomerScheduleEntity;
-        public required Guid CustomerScheduleId;
+        public CustomerScheduleEntity? CustomerScheduleEntity;
+        public Guid? CustomerScheduleId;
         public DateOnly Date;
-        public Guid? DoctorId;
+        public Guid? DoctorClinicId;
         public TimeSpan EndTime;
         public Guid Id;
         public bool IsDeleted;
