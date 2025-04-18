@@ -29,4 +29,11 @@ public static class DomainEvents
         int NewCapacity,
         List<EntityEvent.WorkingScheduleEntity> WorkingScheduleEntities
     ) : IDomainEvent, ICommand;
+
+    public record DoctorScheduleRegistered(
+        Guid IdEvent,
+        Guid DoctorId,
+        string DoctorName,
+        List<EntityEvent.WorkingScheduleEntity> WorkingScheduleEntities
+    ) : IDomainEvent, ICommand;
 }
