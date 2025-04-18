@@ -9,77 +9,79 @@ public static class EntityEvent
         public Guid Id;
         public bool IsActivated;
         public bool IsDeleted;
+        public int LimitBranch;
+        public int LimitLiveStream;
         public DateTimeOffset? ModifiedOnUtc;
         public string Name;
         public decimal Price;
-        public int LimitBranch;
-        public int LimitLiveStream;
     }
 
     public class WorkingScheduleEntity
     {
-        public Guid Id;
-        public Guid? DoctorId;
-        public required Guid CustomerScheduleId;
         public Guid ClinicId;
-        public DateTimeOffset? ModifiedOnUtc;
-        public DateOnly Date;
-        public TimeSpan StartTime;
-        public TimeSpan EndTime;
-        public bool IsDeleted;
         public CustomerScheduleEntity CustomerScheduleEntity;
-        public string? Status;
+        public required Guid CustomerScheduleId;
+        public DateOnly Date;
+        public Guid? DoctorId;
+        public TimeSpan EndTime;
+        public Guid Id;
+        public bool IsDeleted;
+        public DateTimeOffset? ModifiedOnUtc;
         public string? Note;
+        public TimeSpan StartTime;
+        public string? Status;
+        public Guid? ShiftGroupId { get; set; }
+        public int? ShiftCapacity { get; set; }
     }
 
     public class CustomerScheduleEntity
     {
-        public Guid Id;
-        public Guid? CustomerId;
-        public string CustomerName;
-        public TimeSpan? StartTime;
-        public TimeSpan? EndTime;
-        public DateOnly? Date;
-        public Guid? ServiceId;
-        public string ServiceName;
-        public Guid? DoctorId;
-        public string? DoctorName;
         public Guid? ClinicId;
         public string ClinicName;
-        public string Status;
-        public string? DoctorNote;
-        public Guid OrderId;
-        public ProcedurePriceTypeEntity CurrentProcedure;
         public ICollection<ProcedurePriceTypeEntity> CompletedProcedures;
+        public ProcedurePriceTypeEntity CurrentProcedure;
+        public Guid? CustomerId;
+        public string CustomerName;
+        public DateOnly? Date;
+        public Guid? DoctorId;
+        public string? DoctorName;
+        public string? DoctorNote;
+        public TimeSpan? EndTime;
+        public Guid Id;
+        public Guid OrderId;
         public ICollection<ProcedurePriceTypeEntity> PendingProcedures;
+        public Guid? ServiceId;
+        public string ServiceName;
+        public TimeSpan? StartTime;
+        public string Status;
     }
 
     public class ProcedurePriceTypeEntity
     {
-        public Guid Id;
-        public string StepIndex;
-        public string Name;
-        public int Duration;
         public DateOnly? DateCompleted;
+        public int Duration;
+        public Guid Id;
+        public string Name;
+        public string StepIndex;
     }
 
 
     public class DoctorServiceEntity
     {
+        public Guid ClinicId;
+        public UserEntity Doctor;
         public Guid Id;
         public Guid ServiceId;
-        public UserEntity Doctor;
-        public Guid ClinicId;
     }
 
     public class UserEntity
     {
-        public Guid Id;
-        public string FullName;
+        public ICollection<CertificateEntity> DoctorCertificates;
         public string Email;
+        public string FullName;
+        public Guid Id;
         public string PhoneNumber;
         public string ProfilePictureUrl;
-        public ICollection<CertificateEntity> DoctorCertificates;
     }
 
     //Final Test
