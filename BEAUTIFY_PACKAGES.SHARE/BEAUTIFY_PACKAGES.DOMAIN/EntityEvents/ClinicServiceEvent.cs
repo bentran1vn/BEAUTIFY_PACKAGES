@@ -6,6 +6,8 @@ public static class ClinicServiceEvent
         string Name,
         string Description,
         Clinic Branding,
+        double DepositPercent,
+        bool IsRefundable,
         Image[] CoverImages,
         Category Category,
         ICollection<Clinic> Clinic);
@@ -19,6 +21,8 @@ public static class ClinicServiceEvent
         string City,
         string Address,
         string FullAddress,
+        TimeSpan WorkingTimeStart,
+        TimeSpan WorkingTimeEnd,
         string District,
         string Ward,
         string PhoneNumber,
@@ -32,6 +36,8 @@ public static class ClinicServiceEvent
         Guid Id,
         string Name,
         string Description,
+        double DepositPercent,
+        bool IsRefundable,
         Image[] CoverImages,
         Category Category,
         ICollection<Clinic> Clinic);

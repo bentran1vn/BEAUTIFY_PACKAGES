@@ -30,7 +30,7 @@ dotnet add package BEAUTIFY_PACKAGES
 
 ## 📦 Package Information
 - **NuGet Package**: BEAUTIFY_PACKAGES
-- **Current Version**: 0.0.1
+- **Current Version**: [![NuGet](https://img.shields.io/nuget/v/BEAUTIFY_PACKAGES.SHARE)](https://www.nuget.org/packages/BEAUTIFY_PACKAGES.SHARE)  
 - **License**: MIT
 - **Source Repository**: GitHub
 
