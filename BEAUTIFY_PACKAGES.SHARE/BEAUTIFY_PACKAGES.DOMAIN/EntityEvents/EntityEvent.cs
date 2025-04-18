@@ -22,7 +22,7 @@ public static class EntityEvent
         public CustomerScheduleEntity? CustomerScheduleEntity;
         public Guid? CustomerScheduleId;
         public DateOnly Date;
-        public Guid? DoctorClinicId;
+        public Guid? DoctorId;
         public TimeSpan EndTime;
         public Guid Id;
         public bool IsDeleted;
