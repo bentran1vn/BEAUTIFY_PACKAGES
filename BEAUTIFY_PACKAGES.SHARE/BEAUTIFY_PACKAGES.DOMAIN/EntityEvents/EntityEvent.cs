@@ -62,6 +62,7 @@ public static class EntityEvent
         public int Duration;
         public Guid Id;
         public string Name;
+        public string ProcedureName;
         public string StepIndex;
     }
 

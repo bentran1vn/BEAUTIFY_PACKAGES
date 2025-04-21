@@ -4,7 +4,6 @@ public class ProcedureEvent
     public record CreateProcedure(
         Guid Id,
         Guid ServiceId,
-        string ProcedureName,
         string Name,
         string Description,
         decimal MaxPrice,
