@@ -4,6 +4,7 @@ public class ProcedureEvent
     public record CreateProcedure(
         Guid Id,
         Guid ServiceId,
+        string ProcedureName,
         string Name,
         string Description,
         decimal MaxPrice,
@@ -13,8 +14,10 @@ public class ProcedureEvent
         int StepIndex,
         ICollection<ProcedurePriceType> procedurePriceTypes
     );
-    
-    public record DeleteProcedure(Guid Id, Guid ServiceId,
+
+    public record DeleteProcedure(
+        Guid Id,
+        Guid ServiceId,
         decimal MaxPrice,
         decimal MinPrice,
         decimal DiscountMaxPrice,
