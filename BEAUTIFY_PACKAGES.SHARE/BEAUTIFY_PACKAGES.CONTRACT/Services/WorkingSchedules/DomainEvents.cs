@@ -25,6 +25,14 @@ public static class DomainEvents
         List<EntityEvent.WorkingScheduleEntity> WorkingScheduleEntities
     ) : IDomainEvent, ICommand;
 
+    public record DoctorScheduleChangedSingle(
+        Guid IdEvent,
+        EntityEvent.WorkingScheduleEntity entity) : IDomainEvent, ICommand;
+
+    public record DoctorScheduleChangedMultiple(
+        Guid IdEvent,
+        List<EntityEvent.WorkingScheduleEntity> entity) : IDomainEvent, ICommand;
+
     #region NoUse
 
     public record WorkingScheduleCreated(
