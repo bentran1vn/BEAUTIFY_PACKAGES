@@ -33,7 +33,6 @@ public static class DomainEvents
         Guid IdEvent,
         List<EntityEvent.WorkingScheduleEntity> entity) : IDomainEvent, ICommand;
 
-//
 
     #region NoUse
 
