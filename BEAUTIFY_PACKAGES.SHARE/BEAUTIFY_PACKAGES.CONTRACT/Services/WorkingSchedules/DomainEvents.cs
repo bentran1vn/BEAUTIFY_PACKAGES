@@ -35,6 +35,10 @@ public static class DomainEvents
         List<EntityEvent.WorkingScheduleEntity> entity,
         string DoctorName) : IDomainEvent, ICommand;
 
+    public record DoctorScheduleStatusChanged(
+        Guid IdEvent,
+        List<Guid> WorkingScheduleId,
+        string Status) : IDomainEvent, ICommand;
 
     #region NoUse
 
