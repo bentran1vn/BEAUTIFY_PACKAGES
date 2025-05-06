@@ -42,4 +42,11 @@ public static class DomainEvents
         Guid IdEvent,
         List<EntityEvent.CustomerScheduleEntity> entity)
         : IDomainEvent, ICommand;
+
+    public record CustomerScheduleDoctorChanged(
+        Guid IdEvent,
+        List<Guid> IdCustomerSchedules,
+        Guid IdDoctor,
+        string DoctorName)
+        : IDomainEvent, ICommand;
 }
