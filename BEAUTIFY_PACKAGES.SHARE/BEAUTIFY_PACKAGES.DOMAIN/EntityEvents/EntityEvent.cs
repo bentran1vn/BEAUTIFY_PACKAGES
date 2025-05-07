@@ -73,6 +73,7 @@ public static class EntityEvent
         public UserEntity Doctor;
         public Guid Id;
         public Guid ServiceId;
+        public double Rating;
     }
 
     public class UserEntity
