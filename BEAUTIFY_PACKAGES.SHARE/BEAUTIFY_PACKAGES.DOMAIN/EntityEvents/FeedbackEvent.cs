@@ -10,6 +10,7 @@ public class FeedbackEvent
         public string Content { get; set; }
         public int Rating { get; set; }
         public User User { get; set; }
+        public int NewRating { get; set; }
         public DateTimeOffset CreatedAt { get; set; }
     }
     
@@ -20,6 +21,7 @@ public class FeedbackEvent
         public ICollection<string> Images { get; set; }
         public string Content { get; set; }
         public int Rating { get; set; }
+        public int NewRating { get; set; }
         public DateTimeOffset UpdateAt { get; set; }
     }
     
