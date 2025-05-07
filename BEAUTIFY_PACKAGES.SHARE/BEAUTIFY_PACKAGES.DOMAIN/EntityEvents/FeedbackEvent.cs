@@ -8,7 +8,7 @@ public class FeedbackEvent
         public Guid ServiceId { get; set; }
         public ICollection<string> Images { get; set; }
         public string Content { get; set; }
-        public int Rating { get; set; }
+        public double Rating { get; set; }
         public User User { get; set; }
         public double NewRating { get; set; }
         public DateTimeOffset CreatedAt { get; set; }
@@ -20,7 +20,7 @@ public class FeedbackEvent
         public Guid ServiceId { get; set; }
         public ICollection<string> Images { get; set; }
         public string Content { get; set; }
-        public int Rating { get; set; }
+        public double Rating { get; set; }
         public double NewRating { get; set; }
         public DateTimeOffset UpdateAt { get; set; }
     }
