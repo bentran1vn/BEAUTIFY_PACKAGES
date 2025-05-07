@@ -12,6 +12,15 @@ public class FeedbackEvent
         public User User { get; set; }
         public double NewRating { get; set; }
         public DateTimeOffset CreatedAt { get; set; }
+        public List<DoctorFeedback> DoctorFeedbacks { get; set; }
+    }
+
+    public class DoctorFeedback
+    {
+        public Guid FeedbackId { get; set; }
+        public double NewRating { get; set; }
+        public Guid DoctorId { get; set; }
+        public string Content { get; set; }
     }
     
     public class UpdateFeedback
@@ -24,6 +33,7 @@ public class FeedbackEvent
         public User User { get; set; }
         public double NewRating { get; set; }
         public DateTimeOffset UpdateAt { get; set; }
+        public List<DoctorFeedback> DoctorFeedbacks { get; set; }
     }
     
     public class ViewActionFeedback
