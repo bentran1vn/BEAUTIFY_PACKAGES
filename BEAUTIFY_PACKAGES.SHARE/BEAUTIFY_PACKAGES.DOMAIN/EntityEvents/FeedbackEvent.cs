@@ -21,6 +21,7 @@ public class FeedbackEvent
         public ICollection<string> Images { get; set; }
         public string Content { get; set; }
         public double Rating { get; set; }
+        public User User { get; set; }
         public double NewRating { get; set; }
         public DateTimeOffset UpdateAt { get; set; }
     }
@@ -35,6 +36,7 @@ public class FeedbackEvent
     public class User
     {
         public Guid Id { get; set; }
+        public double Rating { get; set; }
         public string Avatar { get; set; }
         public string PhoneNumber { get; set; }
         public string FullName { get; set; }
