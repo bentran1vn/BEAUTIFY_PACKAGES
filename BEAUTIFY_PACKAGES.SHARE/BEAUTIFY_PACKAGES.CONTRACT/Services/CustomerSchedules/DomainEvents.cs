@@ -32,4 +32,21 @@ public static class DomainEvents
         DateOnly Date,
         string Status
     ) : IDomainEvent, ICommand;
+
+    public record CustomerScheduleDoctorChangedSingle(
+        Guid IdEvent,
+        EntityEvent.CustomerScheduleEntity entity)
+        : IDomainEvent, ICommand;
+
+    public record CustomerScheduleDoctorChangedMultiple(
+        Guid IdEvent,
+        List<EntityEvent.CustomerScheduleEntity> entity)
+        : IDomainEvent, ICommand;
+
+    public record CustomerScheduleDoctorChanged(
+        Guid IdEvent,
+        List<Guid> IdCustomerSchedules,
+        Guid IdDoctor,
+        string DoctorName)
+        : IDomainEvent, ICommand;
 }

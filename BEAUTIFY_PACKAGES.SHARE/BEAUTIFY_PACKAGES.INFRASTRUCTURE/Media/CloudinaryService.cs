@@ -24,7 +24,8 @@ public class CloudinaryService : IMediaService
         {
             throw new ArgumentException("File is not a valid image.", nameof(file));
         }
-        using var stream = file.OpenReadStream();
+
+        await using var stream = file.OpenReadStream();
         var uploadParams = new ImageUploadParams()
         {
             File = new FileDescription(file.FileName, stream)
@@ -36,7 +37,7 @@ public class CloudinaryService : IMediaService
     private bool IsImageFile(IFormFile file)
     {
         // This is a basic check. For more robust validation, consider using a library like MimeDetective
-        var allowedExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif" };
+        var allowedExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif",".webp" };
         var fileExtension = Path.GetExtension(file.FileName).ToLowerInvariant();
         return allowedExtensions.Contains(fileExtension);
     }
